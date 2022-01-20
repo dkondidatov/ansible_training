@@ -1,0 +1,19 @@
+---
+# handlers file for install_web_server
+- name: Enable nginx
+  systemd:
+    name: nginx
+    enabled: true
+    state: started
+
+- name: Enable mysql
+  systemd:
+    name: mysql
+    enabled: true
+    state: started
+
+- name: Enable php7.4-fpm
+  systemd:
+    name: php7.4-fpm
+    enabled: true
+    state: started

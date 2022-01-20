@@ -1,0 +1,9 @@
+---
+- name: Update and Upgrade System
+  ansible.builtin.apt:
+    update_cache: yes
+    upgrade: yes
+
+- name: Set Cache Valid Time
+  ansible.builtin.apt:
+    cache_valid_time: 86400

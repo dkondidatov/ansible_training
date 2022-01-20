@@ -1,0 +1,18 @@
+---
+# tasks file for install_web_server
+- name: Update system
+  import_tasks: ubuntu_update_system.yml
+- name: Install nginx for Debian
+  import_tasks: ubuntu_install_nginx.yml
+- name: Install Mysql (MariaDB)
+  import_tasks: ubuntu_install_mysql.yml
+- name: Install PHP
+  import_tasks: ubuntu_install_php.yml
+- name: Prepare Mysql
+  import_tasks: ubuntu_prepare_mysql.yml
+- name: Configure Nginx
+  import_tasks: ubuntu_prepare_nginx.yml
+- name: Install Wordpress
+  import_tasks: ubuntu_install_wordpress.yml
+- name: Configure Wordpress
+  import_tasks: ubuntu_prepare_wordpress.yml

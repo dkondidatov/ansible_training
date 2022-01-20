@@ -1,0 +1,6 @@
+---
+- hosts: websrv
+  user: kdo
+  become: yes
+  roles:
+    - WebServer

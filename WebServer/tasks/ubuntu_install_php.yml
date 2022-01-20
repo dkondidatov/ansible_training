@@ -1,0 +1,32 @@
+---
+- name: Install PHP7.4 Packages
+  ansible.builtin.apt: name={{ item }} update_cache=yes state=present
+  with_items:
+    - mcrypt
+    - php7.4
+    - php-common
+    - php7.4-common
+    - php7.4-opcache
+    - php7.4-cli
+    - php7.4-curl
+    - php7.4-fpm
+    - php7.4-readline
+    - php7.4-json
+    - php7.4-mbstring
+    - php7.4-mysql
+    - php7.4-xml
+    - php7.4-gd
+  notify:
+    - Enable php7.4-fpm
+
+- name: Install Python MYSQL
+  ansible.builtin.apt: name={{ item }} state=present
+  with_items:
+    - python3-dev
+    - libmysqlclient-dev
+    - python3-pip
+
+- name: Install the MySQL-python
+  pip:
+    name: ['pip', 'mysqlclient']
+    state: forcereinstall 

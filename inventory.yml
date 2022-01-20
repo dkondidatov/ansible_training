@@ -1,4 +1,6 @@
 ---
 all:
-  hosts:
-    10.111.11.46:
+  children:
+    websrv:
+      hosts:
+        10.111.11.46:
